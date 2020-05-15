@@ -2,6 +2,9 @@
 {% load static %}
 
 {% block content %}
+<h1>Fancy Flowershop</h1>
+
+<a href="{% url 'bouquetapp:create_bouquet_form' %}">Add new bouquet</a>
 <ol>
     {% for bouquet in bouquet_data %}
         <li>{{ bouquet.name }}</li>

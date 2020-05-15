@@ -25,3 +25,16 @@ def home(request):
             }
 
             return render(request, template, context)
+
+    elif request.method == 'POST':
+        form_data = request.POST
+        with sqlite3.connect(Connection.db_path) as conn:
+            db_cursor = conn.cursor()
+            db_cursor.execute("""
+            INSERT INTO bouquetapp_bouquet
+            (name, occasion
+            )
+            VALUES (?, ?)
+            """,
+                (form_data['name'], form_data['occasion']))
+        return redirect(reverse('bouquetapp:home'))        
