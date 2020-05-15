@@ -1,0 +1,26 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<body>
+    <h1>Bouquet Form</h1>
+
+    <form action="{% url 'bouquetapp:home' %}" method="post">
+    {% csrf_token %}
+        
+        <fieldset>
+            <label for="name">Name: </label>
+            <input id="name" type="text" name="name">
+        </fieldset>     
+        <fieldset>
+            <label for="occasion">Occasion: </label>
+            <input id="occasion" type="text" name="occasion">
+        </fieldset>
+
+        <input class="new_form" type="submit" value="Create" />     
+
+    </form>    
+</body>
+{% endblock %}    
