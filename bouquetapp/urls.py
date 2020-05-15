@@ -8,4 +8,5 @@ app_name = "bouquetapp"
 urlpatterns = [
     path('', home, name='home'),
     path('bouquetform/', create_bouquet_form, name='create_bouquet_form'),
+    path('bouquet/<int:bouquet_id>/details', )
 ]
