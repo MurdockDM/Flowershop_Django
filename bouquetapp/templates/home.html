@@ -1,0 +1,10 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block content %}
+<ol>
+    {% for bouquet in bouquet_data %}
+        <li>{{ bouquet.name }}</li>
+    {% endfor %}   
+</ol>
+{% endblock content %}

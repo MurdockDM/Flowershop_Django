@@ -1,6 +1,10 @@
 from django.urls import path
+from django.conf.urls import include
+from bouquetapp import views
 from .views import *
 
 app_name = "bouquetapp"
 
-urlpatterns = []
+urlpatterns = [
+    path('', home, name='home')
+]
